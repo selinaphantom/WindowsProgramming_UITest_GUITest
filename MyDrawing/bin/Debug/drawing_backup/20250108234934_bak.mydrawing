@@ -1,0 +1,6 @@
+Shape,Terminator,起床,237,30,87,175,
+Shape,Process,吃飯,252,167,66,146,
+Shape,Decision,作業,265,262,112,107,
+Shape,Process,延期,453,290,64,154,
+Shape,Start,通過,80,373,84,85,
+Shape,Process,延期,474,186,23,45,

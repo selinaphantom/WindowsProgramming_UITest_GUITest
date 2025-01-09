@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\bin\Debug\MyDrawing.exe.config
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\bin\Debug\MyDrawing.exe
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\bin\Debug\MyDrawing.pdb
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing._MyDrawingForm.resources
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.Properties.Resources.resources
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.ViewObject.EditForm.resources
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.csproj.GenerateResource.cache
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.exe
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.pdb
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Desktop\視窗城市\HW7\hw7\MyDrawing\obj\Debug\MyDrawing.csproj.Up2Date
