@@ -11,15 +11,15 @@ namespace MyDrawing
         public Factory() { }
         public IShape ChoseeShape(string ChooseType, string InputText, string InputX, string InputY, string InputHeight, string InputWidth) //選擇要新增的類別。
         {
-            if (ChooseType == "Start") //若輸入的資料為浮點數，則無條件捨去，並轉換為INT。
+            if (ChooseType == "UsingStart") //若輸入的資料為浮點數，則無條件捨去，並轉換為INT。
             {
                 return new Start(InputText, (int)double.Parse(InputX), (int)double.Parse(InputY), (int)double.Parse(InputHeight), (int)double.Parse(InputWidth));
             }
-            else if (ChooseType == "Terminator")
+            else if (ChooseType == "UsingTerminator")
             {
                 return new Terminator(InputText, (int)double.Parse(InputX), (int)double.Parse(InputY), (int)double.Parse(InputHeight), (int)double.Parse(InputWidth));
             }
-            else if (ChooseType == "Process")
+            else if (ChooseType == "UsingProcess")
             {
                 return new Process(InputText, (int)double.Parse(InputX), (int)double.Parse(InputY), (int)double.Parse(InputHeight), (int)double.Parse(InputWidth));
             }

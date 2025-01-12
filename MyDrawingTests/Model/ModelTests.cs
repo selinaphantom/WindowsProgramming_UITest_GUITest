@@ -36,10 +36,10 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void AddShapeTest()
         {
-            _model.AddShape("Start", "123", "0", "0", "100", "100");
-            _model.AddShape("Terminator", "123", "0", "0", "100", "100");
-            _model.AddShape("Process", "123", "0", "0", "100", "100");
-            _model.AddShape("Decision", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingStart", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingTerminator", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingProcess", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingDecision", "123", "0", "0", "100", "100");
             Assert.AreEqual("Start", _model.GetShapes()[0]._ShapeName);
             Assert.AreEqual("Terminator", _model.GetShapes()[1]._ShapeName);
             Assert.AreEqual("Process", _model.GetShapes()[2]._ShapeName);
@@ -48,10 +48,10 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void DeleteShapeeTest()
         {
-            _model.AddShape("Start", "123", "0", "0", "100", "100");
-            _model.AddShape("Terminator", "123", "0", "0", "100", "100");
-            _model.AddShape("Process", "123", "0", "0", "100", "100");
-            _model.AddShape("Decision", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingStart", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingTerminator", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingProcess", "123", "0", "0", "100", "100");
+            _model.AddShape("UsingDecision", "123", "0", "0", "100", "100");
             _model.DeleteShape(1);
             Assert.AreEqual("Start", _model.GetShapes()[0]._ShapeName);
             Assert.AreEqual("Process", _model.GetShapes()[1]._ShapeName);
@@ -96,7 +96,7 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void SetDrawStateTest()
         {
-            _model.SetDrawState("Start");
+            _model.SetDrawState("UsingStart");
             _model.PointerDown(0, 0);
             _model.PointerMoved(13, 26);
             _model.PointerUp(55, 33);
@@ -106,7 +106,7 @@ namespace MyDrawing.Tests
             Assert.AreEqual(55, _model.GetShapes()[0]._ShapeWidth);
             Assert.AreEqual(33, _model.GetShapes()[0]._ShapeHeight);
 
-            _model.SetDrawState("Terminator");
+            _model.SetDrawState("UsingTerminator");
             _model.PointerDown(0, 0);
             _model.PointerMoved(13, 26);
             _model.PointerUp(55, 33);
@@ -116,7 +116,7 @@ namespace MyDrawing.Tests
             Assert.AreEqual(55, _model.GetShapes()[1]._ShapeWidth);
             Assert.AreEqual(33, _model.GetShapes()[1]._ShapeHeight);
 
-            _model.SetDrawState("Process");
+            _model.SetDrawState("UsingProcess");
             _model.PointerDown(0, 0);
             _model.PointerMoved(13, 26);
             _model.PointerUp(55, 33);
@@ -126,7 +126,7 @@ namespace MyDrawing.Tests
             Assert.AreEqual(55, _model.GetShapes()[2]._ShapeWidth);
             Assert.AreEqual(33, _model.GetShapes()[2]._ShapeHeight);
 
-            _model.SetDrawState("Decision");
+            _model.SetDrawState("UsingDecision");
             _model.PointerDown(0, 0);
             _model.PointerMoved(13, 26);
             _model.PointerUp(55, 33);
@@ -139,7 +139,7 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void ADDShapeFormDrawTest()
         {
-            _model.SetDrawState("Process");
+            _model.SetDrawState("UsingProcess");
             _model.PointerDown(100, 100);
             _model.PointerMoved(100, 100);
             _model.PointerUp(100, 100);
@@ -153,7 +153,7 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void DrawTest()
         {
-            _model.SetDrawState("Process");
+            _model.SetDrawState("UsingProcess");
             _model.PointerDown(100, 100);
             _model.PointerMoved(100, 100);
             _model.PointerUp(100, 100);
@@ -240,7 +240,7 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void CheckTest()
         {
-            _model.SetDrawState("Process");
+            _model.SetDrawState("UsingProcess");
             _model.PointerDown(50, 50);
             _model.PointerMoved(100, 100);
             _model.PointerUp(100, 100);

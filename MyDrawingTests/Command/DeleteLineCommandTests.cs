@@ -14,7 +14,6 @@ namespace MyDrawing.Command.Tests
     {
         Model _model = new Model();
         IShape _shape = new Start("123", 0, 0, 100, 100);
-        ICommand _ADDcommand;
         ICommand _DelLinecommand;
         [TestInitialize]
         public void Initialize()

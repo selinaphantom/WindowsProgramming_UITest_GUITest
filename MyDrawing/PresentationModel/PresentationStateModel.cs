@@ -47,16 +47,15 @@ namespace MyDrawing
         public int _DataSize { set; get; }
 
 
-        public void checkfilenum(string backupFolder) {
-
-
+        public void checkfilenum(string backupFolder)
+        {
             var files = Directory.GetFiles(backupFolder, "*");
 
             if (files.Length > 5)
             {
                 var fileToDelete = files
-                    .OrderBy(f => Path.GetFileNameWithoutExtension(f)) 
-                    .First(); 
+                    .OrderBy(f => Path.GetFileNameWithoutExtension(f))
+                    .First();
                 File.Delete(fileToDelete);
             }
         }
@@ -65,8 +64,7 @@ namespace MyDrawing
         {
             await Task.Run(() =>
             {
-                // 模擬延遲
-                Thread.Sleep(3000);
+
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     foreach (var shpae in model._Shapes.shapes)
@@ -99,6 +97,7 @@ namespace MyDrawing
                                             $"{line.FinalY}");
                     }
                 }
+                Thread.Sleep(3000);
             });
         }
 
@@ -118,7 +117,7 @@ namespace MyDrawing
                     var data = lineText.Split(','); // 使用逗號分隔每個屬性
                     if (data[0] == "Shape")
                     {
-                        model.AddShape(data[1], data[2], data[3], data[4], data[5], data[6]);
+                        model.AddShape("Using" + data[1], data[2], data[3], data[4], data[5], data[6]);
                     }
                     if (data[0] == "Line")
                     {
@@ -152,31 +151,31 @@ namespace MyDrawing
         public void ButtonChecked(Model model, string ButtonType = "Reset")
         {
             ResetAllState();
-            if (ButtonType == "Start")
+            if (ButtonType == "UsingStart")
             {
                 _StartChecked = true;
                 _CurrentState = true;
                 model.SetDrawState(ButtonType);
             }
-            else if (ButtonType == "Terminator")
+            else if (ButtonType == "UsingTerminator")
             {
                 _TerminatorChecked = true;
                 _CurrentState = true;
                 model.SetDrawState(ButtonType);
             }
-            else if (ButtonType == "Process")
+            else if (ButtonType == "UsingProcess")
             {
                 _ProcessChecked = true;
                 _CurrentState = true;
                 model.SetDrawState(ButtonType);
             }
-            else if (ButtonType == "Decision")
+            else if (ButtonType == "UsingDecision")
             {
                 _DecisionChecked = true;
                 _CurrentState = true;
                 model.SetDrawState(ButtonType);
             }
-            else if (ButtonType == "Line")
+            else if (ButtonType == "UsingLine")
             {
                 _LineChecked = true;
                 _CurrentState = true;

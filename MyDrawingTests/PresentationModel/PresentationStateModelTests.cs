@@ -25,17 +25,22 @@ namespace MyDrawing.Tests
         [TestInitialize()]
         public void Initialize()
         {
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string folderName = "drawing_backup";
+            string folderPath = Path.Combine(basePath, folderName);
+            Directory.CreateDirectory(folderPath);
+            Console.WriteLine($"資料夾已建立：{folderPath}");
 
         }
         [TestMethod()]
         public void ButtonCheckedTest()
         {
             _presentationModel.ButtonChecked(_model);
-            _presentationModel.ButtonChecked(_model, "Start");
-            _presentationModel.ButtonChecked(_model, "Terminator");
-            _presentationModel.ButtonChecked(_model, "Process");
-            _presentationModel.ButtonChecked(_model, "Decision");
-            _presentationModel.ButtonChecked(_model, "Line");
+            _presentationModel.ButtonChecked(_model, "UsingStart");
+            _presentationModel.ButtonChecked(_model, "UsingTerminator");
+            _presentationModel.ButtonChecked(_model, "UsingProcess");
+            _presentationModel.ButtonChecked(_model, "UsingDecision");
+            _presentationModel.ButtonChecked(_model, "UsingLine");
             Assert.AreEqual(true, _presentationModel.CurrentState);
             Assert.AreEqual(true, _presentationModel.LineState);
         }
@@ -61,12 +66,12 @@ namespace MyDrawing.Tests
         [TestMethod()]
         public void EnabledTest()
         {
-            _presentationModel.ButtonChecked(_model, "Start");
+            _presentationModel.ButtonChecked(_model, "UsingStart");
             Assert.AreEqual(true, _presentationModel.StartState);
             Assert.AreEqual(false, _presentationModel.TerminatorState);
             Assert.AreEqual(false, _presentationModel.ProcessState);
             Assert.AreEqual(false, _presentationModel.DecisionState);
-            _presentationModel.ButtonChecked(_model, "Terminator");
+            _presentationModel.ButtonChecked(_model, "UsingTerminator");
             Assert.AreEqual(false, _presentationModel.StartState);
             Assert.AreEqual(true, _presentationModel.TerminatorState);
             Assert.AreEqual(false, _presentationModel.ProcessState);
@@ -108,7 +113,7 @@ namespace MyDrawing.Tests
             _line2.FinalShape = _model.GetShapes()[1];
             _model.AddLine(_line1);
             _model.AddLine(_line2);
-            _presentationModel.DataViewDelClick(_model,3,3,0);
+            _presentationModel.DataViewDelClick(_model, 3, 3, 0);
             Assert.AreEqual(0, _model.GetLines().Count);
             _model.UndoCommand();
             _model.UndoCommand();
@@ -118,20 +123,11 @@ namespace MyDrawing.Tests
             Assert.AreEqual(1, _model.GetLines().Count);
         }
         [TestMethod]
-        public async Task SaveTest()  // 改為 async Task
+        public async Task SavingTest()  // 改為 async Task
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string folderName = "drawing_backup";
             string folderPath = Path.Combine(basePath, folderName);
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-                Console.WriteLine($"資料夾已建立：{folderPath}");
-            }
-            else
-            {
-                Console.WriteLine($"資料夾已存在：{folderPath}");
-            }
             _model.ADDShapeFormDrawState(new Start("123", 0, 0, 100, 100));
             _model.ADDShapeFormDrawState(new Start("345", 200, 345, 100, 100));
             Line _line1 = new Line();
@@ -150,36 +146,27 @@ namespace MyDrawing.Tests
             _presentationModel.checkfilenum(backupFolder);
             DateTime now = DateTime.Now;
             string formattedDateTime = now.ToString("yyyyMMddHHmmss");
-            await _presentationModel.SaveShapesAsync(_model, "UnitTest");
+            await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "UnitTest" + "_bak.mydrawing");
             await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "1" + "_bak.mydrawing");
             await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "2" + "_bak.mydrawing");
             await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "3" + "_bak.mydrawing");
             await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "4" + "_bak.mydrawing");
             await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "5" + "_bak.mydrawing");
-            await _presentationModel.SaveShapesAsync(_model, "drawing_backup/" + "6" + "_bak.mydrawing");
-            Assert.IsTrue(File.Exists("UnitTest"));  
 
+
+
+
+            Assert.IsTrue(File.Exists("drawing_backup/" + "UnitTest" + "_bak.mydrawing"));
         }
         [TestMethod]
-        public void LoadTest()  // 改為 async Task
+        public void UpLoadTest()
         {
-
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string folderName = "drawing_backup";
             string folderPath = Path.Combine(basePath, folderName);
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-                Console.WriteLine($"資料夾已建立：{folderPath}");
-            }
-            else
-            {
-                Console.WriteLine($"資料夾已存在：{folderPath}");
-            }
-
             string backupFolder = Path.Combine(basePath, "drawing_backup");
             _presentationModel.checkfilenum(backupFolder);
-            _presentationModel.LoadShapes(_model, "UnitTest");
+            _presentationModel.LoadShapes(_model, "drawing_backup/" + "UnitTest" + "_bak.mydrawing");
         }
     }
 }

@@ -42,13 +42,69 @@ namespace MyDrawingTests.GUItest.Tests
                 { _root, _driver.CurrentWindowHandle }
             };
         }
+        public void ComboBoxSelect(string name, string itemName)
+        {
+            WindowsElement comboBox = _driver.FindElementByAccessibilityId(name);
+            comboBox.Click();
+            WindowsElement item = _driver.FindElementByName(itemName);
+            item.Click();
+        }
+        public void ClickDataGridViewCellBy(string name, int rowIndex, string columnName)
+        {
+            var dataGridView = _driver.FindElementByAccessibilityId(name);
+            _driver.FindElementByName($"{columnName} 資料列 {rowIndex}").Click();
+        }
+        public void MouseDoubleClick(string name, int x, int y)
+        {
+            WindowsElement element = _driver.FindElementByAccessibilityId(name);
+            var action = new OpenQA.Selenium.Interactions.Actions(_driver);
+            action.MoveToElement(element, x, y).DoubleClick().Perform();
+        }
+        public void WaitAutoSaving()
+        {
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            wait.Until(d => d.WindowHandles.Count > 0);
+
+            if (_driver.WindowHandles.Count > 0)
+            {
+                _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+            }
+            else
+            {
+                throw new InvalidOperationException("視窗未重新出現");
+            }
+        }
 
         // clean up
         public void CleanUp()
         {
             SwitchTo(_root);
-            _driver.CloseApp();
-            _driver.Dispose();
+            try
+            {
+                Console.WriteLine("清理過程開始");
+                Console.WriteLine($"當前視窗數量：{_driver.WindowHandles.Count}");
+
+                if (_driver.WindowHandles.Count > 0)
+                {
+                    foreach (string handle in _driver.WindowHandles)
+                    {
+                        _driver.SwitchTo().Window(handle);
+                        Console.WriteLine($"當前視窗標題：{_driver.Title}");
+                    }
+
+                    _driver.SwitchTo().Window(_driver.WindowHandles[0]); // 切換到第一個視窗
+                    _driver.Close(); // 關閉視窗
+                }
+            }
+            catch (WebDriverException ex)
+            {
+                Console.WriteLine($"清理失敗：{ex.Message}");
+            }
+            finally
+            {
+                _driver.Quit(); // 確保釋放資源
+                Console.WriteLine("測試結束並清理完成");
+            }
         }
 
         // test
@@ -71,25 +127,21 @@ namespace MyDrawingTests.GUItest.Tests
                     }
                     catch
                     {
-                        // 忽略未找到的窗口，繼續嘗試
                     }
                 }
             }
         }
 
-        // test
         public void Sleep(Double time)
         {
             Thread.Sleep(TimeSpan.FromSeconds(time));
         }
 
-        // test
         public void ClickButton(string name)
         {
             _driver.FindElementByName(name).Click();
         }
 
-        // test
         public void ClickTabControl(string name)
         {
             var elements = _driver.FindElementsByName(name);
@@ -99,8 +151,12 @@ namespace MyDrawingTests.GUItest.Tests
                     element.Click();
             }
         }
-
-        // test
+        public void SetBoxValue(string name, string input)
+        {
+            var textBox = _driver.FindElementByAccessibilityId(name);
+            textBox.Clear(); // 清除現有文本
+            textBox.SendKeys(input); // 輸入新值
+        }
         public void CloseWindow()
         {
             SendKeys.SendWait("%{F4}");
@@ -112,21 +168,15 @@ namespace MyDrawingTests.GUItest.Tests
             _driver.FindElementByName("確定").Click();
         }
 
-        // test
-        public void ClickDataGridViewCellBy(string name, int rowIndex, string columnName)
-        {
-            var dataGridView = _driver.FindElementByAccessibilityId(name);
-            _driver.FindElementByName($"{columnName} 資料列 {rowIndex}").Click();
-        }
         public void MouseAction(string name, int X, int Y, int H, int W)
         {
             WindowsElement canvas = _driver.FindElementByAccessibilityId(name);
             var action = new OpenQA.Selenium.Interactions.Actions(_driver);
-            action.MoveToElement(canvas, 0, 0)    
+            action.MoveToElement(canvas, 0, 0)
                   .MoveByOffset((int)((X * 1.25)), (int)((Y * 1.25)))
-                  .ClickAndHold()                          
-                  .MoveByOffset((int)((W* 1.25)), (int)((H * 1.25)))  
-                  .Release()                               
+                  .ClickAndHold()
+                  .MoveByOffset((int)((W * 1.25)), (int)((H * 1.25)))
+                  .Release()
                   .Perform();
         }
 
@@ -154,17 +204,22 @@ namespace MyDrawingTests.GUItest.Tests
         }
 
         // test
-        public void AssertDataGridViewRowDataBy(string name, int rowIndex,int Index, string data)
+        public void AssertDataGridViewRowDataBy(string name, int rowIndex, string shapeName, int x, int y, int width, int height)
         {
             var dataGridView = _driver.FindElementByAccessibilityId(name);
             var rowDatas = dataGridView.FindElementByName($"資料列 {rowIndex}").FindElementsByXPath("//*");
-
-            // FindElementsByXPath("//*") 會把 "row" node 也抓出來，因此 i 要從 1 開始以跳過 "row" node
-
-            Assert.AreEqual(data, rowDatas[Index].Text.Replace("(null)", ""));
-
+            Assert.AreEqual(shapeName, rowDatas[3].Text);
+            Assert.AreEqual(x, int.Parse(rowDatas[5].Text));
+            Assert.AreEqual(y, int.Parse(rowDatas[6].Text));
+            Assert.AreEqual(width, int.Parse(rowDatas[7].Text));
+            Assert.AreEqual(height, int.Parse(rowDatas[8].Text));
         }
-
+        public void AssertDataGridViewRowDataByText(string name, int rowIndex, string Text)
+        {
+            var dataGridView = _driver.FindElementByAccessibilityId(name);
+            var rowDatas = dataGridView.FindElementByName($"資料列 {rowIndex}").FindElementsByXPath("//*");
+            Assert.AreEqual(Text, rowDatas[4].Text);
+        }
         // test
         public void AssertDataGridViewRowCountBy(string name, int rowCount)
         {
@@ -190,7 +245,8 @@ namespace MyDrawingTests.GUItest.Tests
         public void SetText(string elementId, string text)
         {
             // 找到輸入框元素
-            if (elementId == "") {
+            if (elementId == "")
+            {
                 Clipboard.SetText(text);
                 SendKeys.SendWait("^v");
                 return;
@@ -230,7 +286,7 @@ namespace MyDrawingTests.GUItest.Tests
                 // 點擊按鈕
                 button.Click();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

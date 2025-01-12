@@ -75,8 +75,6 @@
             this._button2 = new System.Windows.Forms.Button();
             this._button1 = new System.Windows.Forms.Button();
             this._ToolBar = new System.Windows.Forms.ToolStrip();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this._UsingStart = new System.Windows.Forms.ToolStripButton();
             this._UsingTerminator = new System.Windows.Forms.ToolStripButton();
             this._UsingDecision = new System.Windows.Forms.ToolStripButton();
@@ -87,6 +85,8 @@
             this._Redo = new System.Windows.Forms.ToolStripButton();
             this._Save = new System.Windows.Forms.ToolStripButton();
             this._Load = new System.Windows.Forms.ToolStripButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.剪下TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.複製CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.貼上PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,11 +120,11 @@
             this._DataDisplay.Controls.Add(this._InputText);
             this._DataDisplay.Controls.Add(this._ChooseType);
             this._DataDisplay.Controls.Add(this._AddShape);
-            this._DataDisplay.Location = new System.Drawing.Point(1097, 64);
-            this._DataDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._DataDisplay.Location = new System.Drawing.Point(852, 51);
+            this._DataDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._DataDisplay.Name = "_DataDisplay";
-            this._DataDisplay.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._DataDisplay.Size = new System.Drawing.Size(436, 701);
+            this._DataDisplay.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._DataDisplay.Size = new System.Drawing.Size(327, 561);
             this._DataDisplay.TabIndex = 0;
             this._DataDisplay.TabStop = false;
             this._DataDisplay.Text = "資料顯示";
@@ -132,36 +132,39 @@
             // _LabelW
             // 
             this._LabelW.AutoSize = true;
-            this._LabelW.Location = new System.Drawing.Point(389, 24);
+            this._LabelW.Location = new System.Drawing.Point(292, 19);
+            this._LabelW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._LabelW.Name = "_LabelW";
-            this._LabelW.Size = new System.Drawing.Size(20, 15);
+            this._LabelW.Size = new System.Drawing.Size(16, 12);
             this._LabelW.TabIndex = 12;
             this._LabelW.Text = "W";
             // 
             // _InputW
             // 
-            this._InputW.Location = new System.Drawing.Point(375, 46);
-            this._InputW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._InputW.Location = new System.Drawing.Point(281, 37);
+            this._InputW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._InputW.Name = "_InputW";
-            this._InputW.Size = new System.Drawing.Size(41, 25);
+            this._InputW.Size = new System.Drawing.Size(32, 22);
             this._InputW.TabIndex = 11;
             this._InputW.TextChanged += new System.EventHandler(this.TextChangedCheck);
             // 
             // _LabelH
             // 
             this._LabelH.AutoSize = true;
-            this._LabelH.Location = new System.Drawing.Point(343, 24);
+            this._LabelH.Location = new System.Drawing.Point(257, 19);
+            this._LabelH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._LabelH.Name = "_LabelH";
-            this._LabelH.Size = new System.Drawing.Size(17, 15);
+            this._LabelH.Size = new System.Drawing.Size(13, 12);
             this._LabelH.TabIndex = 10;
             this._LabelH.Text = "H";
             // 
             // _LabelY
             // 
             this._LabelY.AutoSize = true;
-            this._LabelY.Location = new System.Drawing.Point(297, 24);
+            this._LabelY.Location = new System.Drawing.Point(223, 19);
+            this._LabelY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._LabelY.Name = "_LabelY";
-            this._LabelY.Size = new System.Drawing.Size(17, 15);
+            this._LabelY.Size = new System.Drawing.Size(13, 12);
             this._LabelY.TabIndex = 9;
             this._LabelY.Text = "Y";
             // 
@@ -170,18 +173,20 @@
             this._LabelX.AutoSize = true;
             this._LabelX.BackColor = System.Drawing.SystemColors.Control;
             this._LabelX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._LabelX.Location = new System.Drawing.Point(251, 24);
+            this._LabelX.Location = new System.Drawing.Point(188, 19);
+            this._LabelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._LabelX.Name = "_LabelX";
-            this._LabelX.Size = new System.Drawing.Size(17, 15);
+            this._LabelX.Size = new System.Drawing.Size(13, 12);
             this._LabelX.TabIndex = 8;
             this._LabelX.Text = "X";
             // 
             // _LabelText
             // 
             this._LabelText.AutoSize = true;
-            this._LabelText.Location = new System.Drawing.Point(173, 24);
+            this._LabelText.Location = new System.Drawing.Point(130, 19);
+            this._LabelText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._LabelText.Name = "_LabelText";
-            this._LabelText.Size = new System.Drawing.Size(37, 15);
+            this._LabelText.Size = new System.Drawing.Size(29, 12);
             this._LabelText.TabIndex = 7;
             this._LabelText.Text = "文字";
             // 
@@ -201,13 +206,13 @@
             this._Y,
             this._H,
             this._W});
-            this._DataView.Location = new System.Drawing.Point(5, 78);
-            this._DataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._DataView.Location = new System.Drawing.Point(4, 62);
+            this._DataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._DataView.Name = "_DataView";
             this._DataView.RowHeadersVisible = false;
             this._DataView.RowHeadersWidth = 51;
             this._DataView.RowTemplate.Height = 27;
-            this._DataView.Size = new System.Drawing.Size(445, 614);
+            this._DataView.Size = new System.Drawing.Size(334, 491);
             this._DataView.TabIndex = 6;
             this._DataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataView_CellContentClick);
             // 
@@ -278,64 +283,64 @@
             // 
             // _InputX
             // 
-            this._InputX.Location = new System.Drawing.Point(237, 46);
-            this._InputX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._InputX.Location = new System.Drawing.Point(178, 37);
+            this._InputX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._InputX.Name = "_InputX";
-            this._InputX.Size = new System.Drawing.Size(41, 25);
+            this._InputX.Size = new System.Drawing.Size(32, 22);
             this._InputX.TabIndex = 5;
             this._InputX.TextChanged += new System.EventHandler(this.TextChangedCheck);
             // 
             // _InputY
             // 
-            this._InputY.Location = new System.Drawing.Point(284, 46);
-            this._InputY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._InputY.Location = new System.Drawing.Point(213, 37);
+            this._InputY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._InputY.Name = "_InputY";
-            this._InputY.Size = new System.Drawing.Size(41, 25);
+            this._InputY.Size = new System.Drawing.Size(32, 22);
             this._InputY.TabIndex = 4;
             this._InputY.TextChanged += new System.EventHandler(this.TextChangedCheck);
             // 
             // _InputH
             // 
-            this._InputH.Location = new System.Drawing.Point(331, 46);
-            this._InputH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._InputH.Location = new System.Drawing.Point(248, 37);
+            this._InputH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._InputH.Name = "_InputH";
-            this._InputH.Size = new System.Drawing.Size(41, 25);
+            this._InputH.Size = new System.Drawing.Size(32, 22);
             this._InputH.TabIndex = 3;
             this._InputH.TextChanged += new System.EventHandler(this.TextChangedCheck);
             // 
             // _InputText
             // 
-            this._InputText.Location = new System.Drawing.Point(152, 46);
-            this._InputText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._InputText.Location = new System.Drawing.Point(114, 37);
+            this._InputText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._InputText.Name = "_InputText";
-            this._InputText.Size = new System.Drawing.Size(79, 25);
+            this._InputText.Size = new System.Drawing.Size(60, 22);
             this._InputText.TabIndex = 2;
             this._InputText.TextChanged += new System.EventHandler(this.TextChangedCheck);
             // 
             // _ChooseType
             // 
+            this._ChooseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._ChooseType.FormattingEnabled = true;
             this._ChooseType.Items.AddRange(new object[] {
             "Start",
             "Terminator",
             "Process",
             "Decision"});
-            this._ChooseType.Location = new System.Drawing.Point(87, 48);
-            this._ChooseType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._ChooseType.Location = new System.Drawing.Point(65, 38);
+            this._ChooseType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._ChooseType.Name = "_ChooseType";
-            this._ChooseType.Size = new System.Drawing.Size(59, 23);
+            this._ChooseType.Size = new System.Drawing.Size(45, 20);
             this._ChooseType.TabIndex = 1;
-            this._ChooseType.Text = "形狀";
             this._ChooseType.SelectedIndexChanged += new System.EventHandler(this._ChooseType_SelectedIndexChanged);
             // 
             // _AddShape
             // 
             this._AddShape.Cursor = System.Windows.Forms.Cursors.Default;
             this._AddShape.Enabled = false;
-            this._AddShape.Location = new System.Drawing.Point(5, 24);
-            this._AddShape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._AddShape.Location = new System.Drawing.Point(4, 19);
+            this._AddShape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._AddShape.Name = "_AddShape";
-            this._AddShape.Size = new System.Drawing.Size(75, 48);
+            this._AddShape.Size = new System.Drawing.Size(56, 38);
             this._AddShape.TabIndex = 0;
             this._AddShape.Text = "新增";
             this._AddShape.UseVisualStyleBackColor = true;
@@ -446,8 +451,8 @@
             this.說明ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1581, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1190, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -456,13 +461,13 @@
             this.說明ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.關於ToolStripMenuItem});
             this.說明ToolStripMenuItem.Name = "說明ToolStripMenuItem";
-            this.說明ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.說明ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.說明ToolStripMenuItem.Text = "說明";
             // 
             // 關於ToolStripMenuItem
             // 
             this.關於ToolStripMenuItem.Name = "關於ToolStripMenuItem";
-            this.關於ToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.關於ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.關於ToolStripMenuItem.Text = "關於";
             // 
             // _GroupBox
@@ -472,29 +477,29 @@
             this._GroupBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this._GroupBox.Controls.Add(this._button2);
             this._GroupBox.Controls.Add(this._button1);
-            this._GroupBox.Location = new System.Drawing.Point(0, 64);
-            this._GroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._GroupBox.Location = new System.Drawing.Point(0, 51);
+            this._GroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._GroupBox.Name = "_GroupBox";
-            this._GroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._GroupBox.Size = new System.Drawing.Size(200, 705);
+            this._GroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._GroupBox.Size = new System.Drawing.Size(150, 564);
             this._GroupBox.TabIndex = 2;
             this._GroupBox.TabStop = false;
             // 
             // _button2
             // 
-            this._button2.Location = new System.Drawing.Point(7, 156);
-            this._button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._button2.Location = new System.Drawing.Point(5, 125);
+            this._button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._button2.Name = "_button2";
-            this._button2.Size = new System.Drawing.Size(187, 150);
+            this._button2.Size = new System.Drawing.Size(140, 120);
             this._button2.TabIndex = 1;
             this._button2.UseVisualStyleBackColor = true;
             // 
             // _button1
             // 
-            this._button1.Location = new System.Drawing.Point(7, 14);
-            this._button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._button1.Location = new System.Drawing.Point(5, 11);
+            this._button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._button1.Name = "_button1";
-            this._button1.Size = new System.Drawing.Size(187, 136);
+            this._button1.Size = new System.Drawing.Size(140, 109);
             this._button1.TabIndex = 0;
             this._button1.UseVisualStyleBackColor = true;
             // 
@@ -516,9 +521,9 @@
             this._Redo,
             this._Save,
             this._Load});
-            this._ToolBar.Location = new System.Drawing.Point(0, 30);
+            this._ToolBar.Location = new System.Drawing.Point(0, 24);
             this._ToolBar.Name = "_ToolBar";
-            this._ToolBar.Size = new System.Drawing.Size(1581, 34);
+            this._ToolBar.Size = new System.Drawing.Size(1190, 27);
             this._ToolBar.TabIndex = 3;
             this._ToolBar.Text = "ToolBar";
             this._ToolBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolBar_ItemClicked);
@@ -529,9 +534,9 @@
             this._UsingStart.Image = global::MyDrawing.Properties.Resources.Start_Icon;
             this._UsingStart.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UsingStart.Name = "_UsingStart";
-            this._UsingStart.Size = new System.Drawing.Size(29, 31);
-            this._UsingStart.Text = "Start";
-            this._UsingStart.ToolTipText = "Start";
+            this._UsingStart.Size = new System.Drawing.Size(24, 24);
+            this._UsingStart.Text = "UsingStart";
+            this._UsingStart.ToolTipText = "UsingStart";
             // 
             // _UsingTerminator
             // 
@@ -539,8 +544,9 @@
             this._UsingTerminator.Image = global::MyDrawing.Properties.Resources.Terminator_Icon;
             this._UsingTerminator.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UsingTerminator.Name = "_UsingTerminator";
-            this._UsingTerminator.Size = new System.Drawing.Size(29, 31);
-            this._UsingTerminator.Text = "Terminator";
+            this._UsingTerminator.Size = new System.Drawing.Size(24, 24);
+            this._UsingTerminator.Text = "UsingTerminator";
+            this._UsingTerminator.ToolTipText = "UsingTerminator";
             // 
             // _UsingDecision
             // 
@@ -548,8 +554,8 @@
             this._UsingDecision.Image = global::MyDrawing.Properties.Resources.Decision_Icon;
             this._UsingDecision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UsingDecision.Name = "_UsingDecision";
-            this._UsingDecision.Size = new System.Drawing.Size(29, 31);
-            this._UsingDecision.Text = "Decision";
+            this._UsingDecision.Size = new System.Drawing.Size(24, 24);
+            this._UsingDecision.Text = "UsingDecision";
             // 
             // _UsingProcess
             // 
@@ -557,8 +563,9 @@
             this._UsingProcess.Image = global::MyDrawing.Properties.Resources.Process_Icon;
             this._UsingProcess.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UsingProcess.Name = "_UsingProcess";
-            this._UsingProcess.Size = new System.Drawing.Size(29, 31);
-            this._UsingProcess.Text = "Process";
+            this._UsingProcess.Size = new System.Drawing.Size(24, 24);
+            this._UsingProcess.Text = "UsingProcess";
+            this._UsingProcess.ToolTipText = "UsingProcess";
             // 
             // _UsingLine
             // 
@@ -566,8 +573,8 @@
             this._UsingLine.Image = global::MyDrawing.Properties.Resources.Line_Icon;
             this._UsingLine.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UsingLine.Name = "_UsingLine";
-            this._UsingLine.Size = new System.Drawing.Size(29, 31);
-            this._UsingLine.Text = "Line";
+            this._UsingLine.Size = new System.Drawing.Size(24, 24);
+            this._UsingLine.Text = "UsingLine";
             // 
             // _NormalState
             // 
@@ -575,7 +582,7 @@
             this._NormalState.Image = global::MyDrawing.Properties.Resources.Normal_Icon;
             this._NormalState.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._NormalState.Name = "_NormalState";
-            this._NormalState.Size = new System.Drawing.Size(29, 31);
+            this._NormalState.Size = new System.Drawing.Size(24, 24);
             this._NormalState.Text = "normalstate";
             // 
             // _Undo
@@ -585,7 +592,7 @@
             this._Undo.Image = global::MyDrawing.Properties.Resources.Undo_Icon;
             this._Undo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._Undo.Name = "_Undo";
-            this._Undo.Size = new System.Drawing.Size(29, 31);
+            this._Undo.Size = new System.Drawing.Size(24, 24);
             this._Undo.Text = "Undo";
             this._Undo.Click += new System.EventHandler(this._Undo_Click);
             // 
@@ -596,7 +603,7 @@
             this._Redo.Image = global::MyDrawing.Properties.Resources.Redo_Icon;
             this._Redo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._Redo.Name = "_Redo";
-            this._Redo.Size = new System.Drawing.Size(29, 31);
+            this._Redo.Size = new System.Drawing.Size(24, 24);
             this._Redo.Text = "Redo";
             this._Redo.Click += new System.EventHandler(this._Redo_Click);
             // 
@@ -606,7 +613,7 @@
             this._Save.Image = global::MyDrawing.Properties.Resources.Save;
             this._Save.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._Save.Name = "_Save";
-            this._Save.Size = new System.Drawing.Size(29, 31);
+            this._Save.Size = new System.Drawing.Size(24, 24);
             this._Save.Text = "Save";
             this._Save.Click += new System.EventHandler(this.Save_Click);
             // 
@@ -616,7 +623,7 @@
             this._Load.Image = global::MyDrawing.Properties.Resources.Load;
             this._Load.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._Load.Name = "_Load";
-            this._Load.Size = new System.Drawing.Size(29, 31);
+            this._Load.Size = new System.Drawing.Size(24, 24);
             this._Load.Text = "Load";
             this._Load.Click += new System.EventHandler(this.Load_Click);
             // 
@@ -693,15 +700,15 @@
             // 
             // _MyDrawingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1581, 752);
+            this.ClientSize = new System.Drawing.Size(1190, 602);
             this.Controls.Add(this._ToolBar);
             this.Controls.Add(this._GroupBox);
             this.Controls.Add(this._DataDisplay);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "_MyDrawingForm";
             this.Text = "MyDrawing";
             this._DataDisplay.ResumeLayout(false);

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
@@ -82,9 +83,10 @@ namespace MyDrawing
                     this.Invoke(new Action(() => { this.Text = "MyDrawing (Auto saving...)"; }));
                 else
                     this.Text = "MyDrawing (Auto saving...)";
+                string _backupFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "drawing_backup");
                 DateTime now = DateTime.Now;
                 string formattedDateTime = now.ToString("yyyyMMddHHmmss");
-                await presentationModel.SaveShapesAsync(model, "drawing_backup/" + formattedDateTime + "_bak.mydrawing");
+                await presentationModel.SaveShapesAsync(model, _backupFolder + "\\" + formattedDateTime + "_bak.mydrawing");
                 model._modelChange = false;
                 if (this.InvokeRequired)
                     this.Invoke(new Action(() => { this.Text = "MyDrawing"; }));
@@ -98,9 +100,8 @@ namespace MyDrawing
         }
         private void AddOrHintShape() //決定要顯示錯誤訊息或將新增資料且顯示在DataGridView上。
         {
-            model.AddCommand(new ADDCommand(model, _ChooseType.SelectedItem.ToString(), _InputText.Text, _InputX.Text, _InputY.Text, _InputH.Text, _InputW.Text));
+            model.AddCommand(new ADDCommand(model, "Using" + _ChooseType.SelectedItem.ToString(), _InputText.Text, _InputX.Text, _InputY.Text, _InputH.Text, _InputW.Text));
             _ChooseType.SelectedIndex = -1; //重製顯示內容
-            _ChooseType.Text = "形狀"; //重製顯示內容
             _InputText.Text = ""; //重製顯示內容
             _InputX.Text = ""; //重製顯示內容
             _InputY.Text = ""; //重製顯示內容
@@ -210,7 +211,7 @@ namespace MyDrawing
             UpdataToolBarStatus();
             UpdateDisplay();
         }
-        private void GraphicsPaint(object sender, PaintEventArgs e)//繪製圖形。
+        private void GraphicsPaint(object sender, PaintEventArgs e)//繪製圖形。ADD
         {
             model.Draw(new PresentationModel.FormGraphicsAdaptor(e.Graphics));
         }
@@ -237,7 +238,7 @@ namespace MyDrawing
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog //跳出選擇畫面
             {
-                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                Filter = "MyDrawing files (*.mydrawing)|*.mydrawing|All files (*.*)|*.*",
                 Title = "選擇載入檔案"
             })
             {
@@ -262,7 +263,7 @@ namespace MyDrawing
             _Save.Enabled = false; // 禁用 Save 按鈕
             using (SaveFileDialog saveFileDialog = new SaveFileDialog //跳出選擇畫面
             {
-                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                Filter = "MyDrawing files (*.mydrawing)|*.mydrawing|All files (*.*)|*.*",
                 Title = "選擇儲存位置"
             })
             {
