@@ -22,6 +22,7 @@ MyDrawing 是一款使用 **C#** 開發，專門用於繪製流程圖的應用�
 | **Interface** | 各模組間使用之抽象介面（IShape、IGraphics、ICommand 等） |
 
 ##  專案結構
+```
 MyDrawing/
 ├── Homework Summary.doc
 ├── MyDrawing.sln
@@ -109,7 +110,7 @@ MyDrawingTests/
 │   ├── TerminatorTests.cs
 ├── Model/
 │   ├── ModelTests.cs
-
+```
 ## 測試資訊
 
 本專案包含以下兩種測試：
