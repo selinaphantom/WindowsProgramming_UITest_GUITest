@@ -22,95 +22,93 @@ MyDrawing 是一款使用 **C#** 開發，專門用於繪製流程圖的應用�
 | **Interface** | 各模組間使用之抽象介面（IShape、IGraphics、ICommand 等） |
 
 ##  專案結構
-HW7/
-├── MyDrawing/
-│   ├── Homework Summary.doc
-│   ├── MyDrawing.sln
-│   ├── .vs/
-│   │   ├── MyDrawing/
-│   │   │   ├── CopilotIndices/
-│   │   │   │   ├── 0.2.1653.9816/
-│   │   │   │   │   ├── CodeChunks.db
-│   │   │   │   │   ├── SemanticSymbols.db
-│   │   │   │   │   ├── SemanticSymbols.db-shm
-│   │   │   │   │   ├── SemanticSymbols.db-wal
-│   │   │   ├── FileContentIndex/
-│   │   │   │   ├── *.vsidx
-│   │   │   ├── v15/, v17/
-│   │   │   │   ├── .suo, layout.json, testlog, etc.
+MyDrawing/
+├── Homework Summary.doc
+├── MyDrawing.sln
+├── .vs/
 │   ├── MyDrawing/
-│   │   ├── App.config
-│   │   ├── DoubleBufferedPanel.cs
-│   │   ├── Form1.cs
-│   │   ├── Form1.Designer.cs
-│   │   ├── Form1.resx
-│   │   ├── MyDrawing.csproj
-│   │   ├── packages.config
-│   │   ├── Program.cs
-│   │   ├── .vs/
-│   │   │   ├── MyDrawing.csproj.dtbcache.json
-│   │   ├── Command/
-│   │   │   ├── ADDCommand.cs
-│   │   │   ├── CommandManager.cs
-│   │   │   ├── DeleteCommand.cs
-│   │   │   ├── DeleteLineCommand.cs
-│   │   │   ├── DrawCommand.cs
-│   │   │   ├── DrawLineCommand.cs
-│   │   │   ├── MoveCommand.cs
-│   │   │   ├── TextChangeCommand.cs
-│   │   │   ├── TextMoveCommand.cs
-│   │   ├── Factory/
-│   │   │   ├── Factory.cs
-│   │   ├── Icon/  (空或未列出圖示)
-│   │   ├── Interface/
-│   │   │   ├── ICommand.cs
-│   │   │   ├── IGraphics.cs
-│   │   │   ├── IShape.cs
-│   │   │   ├── IState.cs
-│   │   ├── Model/
-│   │   │   ├── Model.cs
-│   │   ├── PresentationModel/
-│   │   │   ├── PresentationStateModel.cs
-│   │   ├── Shape/
-│   │   │   ├── Decision.cs
-│   │   │   ├── Line.cs
-│   │   │   ├── Process.cs
-│   │   │   ├── Shape.cs
-│   │   │   ├── Start.cs
-│   │   │   ├── Terminator.cs
-│   │   ├── State/
-│   │   │   ├── DrawLineState.cs
-│   │   │   ├── DrawState.cs
-│   │   │   ├── IState.cs
-│   │   │   ├── PointState.cs
-│   │   ├── ViewObject/
-│   │   │   ├── EditForm.cs
-│   │   │   ├── EditForm.Designer.cs
-│   │   │   ├── EditForm.resx
-│   │   │   ├── FormGraphicsAdaptor.cs
-│
-├── MyDrawingTests/
+│   │   ├── CopilotIndices/
+│   │   │   ├── 0.2.1653.9816/
+│   │   │   │   ├── CodeChunks.db
+│   │   │   │   ├── SemanticSymbols.db
+│   │   │   │   ├── SemanticSymbols.db-shm
+│   │   │   │   ├── SemanticSymbols.db-wal
+│   │   ├── FileContentIndex/
+│   │   │   ├── *.vsidx
+│   │   ├── v15/, v17/
+│   │   │   ├── .suo, layout.json, testlog, etc.
+├── MyDrawing/
+│   ├── App.config
+│   ├── DoubleBufferedPanel.cs
+│   ├── Form1.cs
+│   ├── Form1.Designer.cs
+│   ├── Form1.resx
+│   ├── MyDrawing.csproj
+│   ├── packages.config
+│   ├── Program.cs
+│   ├── .vs/
+│   │   ├── MyDrawing.csproj.dtbcache.json
 │   ├── Command/
-│   │   ├── ADDCommandTests.cs
-│   │   ├── DeleteCommandTests.cs
-│   │   ├── DeleteLineCommandTests.cs
-│   │   ├── DrawCommandTests.cs
-│   │   ├── DrawLineCommandTests.cs
-│   │   ├── MoveCommandTests.cs
-│   │   ├── TextChangeCommandTests.cs
-│   │   ├── TextMoveCommandTests.cs
-│   ├── GUItest/
-│   │   ├── MyDrawingGUITest.cs
-│   │   ├── Robot.cs
-│   ├── Shape/
-│   │   ├── DecisionTests.cs
-│   │   ├── LineTests.cs
-│   │   ├── ProcessTests.cs
-│   │   ├── ShapeTests.cs
-│   │   ├── StartTests.cs
-│   │   ├── TerminatorTests.cs
+│   │   ├── ADDCommand.cs
+│   │   ├── CommandManager.cs
+│   │   ├── DeleteCommand.cs
+│   │   ├── DeleteLineCommand.cs
+│   │   ├── DrawCommand.cs
+│   │   ├── DrawLineCommand.cs
+│   │   ├── MoveCommand.cs
+│   │   ├── TextChangeCommand.cs
+│   │   ├── TextMoveCommand.cs
+│   ├── Factory/
+│   │   ├── Factory.cs
+│   ├── Icon/
+│   ├── Interface/
+│   │   ├── ICommand.cs
+│   │   ├── IGraphics.cs
+│   │   ├── IShape.cs
+│   │   ├── IState.cs
 │   ├── Model/
-│   │   ├── ModelTests.cs
+│   │   ├── Model.cs
+│   ├── PresentationModel/
+│   │   ├── PresentationStateModel.cs
+│   ├── Shape/
+│   │   ├── Decision.cs
+│   │   ├── Line.cs
+│   │   ├── Process.cs
+│   │   ├── Shape.cs
+│   │   ├── Start.cs
+│   │   ├── Terminator.cs
+│   ├── State/
+│   │   ├── DrawLineState.cs
+│   │   ├── DrawState.cs
+│   │   ├── IState.cs
+│   │   ├── PointState.cs
+│   ├── ViewObject/
+│   │   ├── EditForm.cs
+│   │   ├── EditForm.Designer.cs
+│   │   ├── EditForm.resx
+│   │   ├── FormGraphicsAdaptor.cs
+MyDrawingTests/
+├── Command/
+│   ├── ADDCommandTests.cs
+│   ├── DeleteCommandTests.cs
+│   ├── DeleteLineCommandTests.cs
+│   ├── DrawCommandTests.cs
+│   ├── DrawLineCommandTests.cs
+│   ├── MoveCommandTests.cs
+│   ├── TextChangeCommandTests.cs
+│   ├── TextMoveCommandTests.cs
+├── GUItest/
+│   ├── MyDrawingGUITest.cs
+│   ├── Robot.cs
+├── Shape/
+│   ├── DecisionTests.cs
+│   ├── LineTests.cs
+│   ├── ProcessTests.cs
+│   ├── ShapeTests.cs
+│   ├── StartTests.cs
+│   ├── TerminatorTests.cs
+├── Model/
+│   ├── ModelTests.cs
 
 ## 測試資訊
 
