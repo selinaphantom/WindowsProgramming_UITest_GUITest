@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\",
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9DC5486F-FC06-4F5B-8CD9-0ABEB7988794}|MyDrawing\\MyDrawing.csproj|c:\\users\\user\\desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\mydrawing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC5486F-FC06-4F5B-8CD9-0ABEB7988794}|MyDrawing\\MyDrawing.csproj|solutionrelative:mydrawing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|c:\\users\\user\\desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\mydrawingtests\\guitest\\mydrawingguitest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|c:\\users\\user\\desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7\\hw7\\mydrawingtests\\guitest\\mydrawingguitest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|solutionrelative:mydrawingtests\\guitest\\mydrawingguitest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|c:\\users\\user\\desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\mydrawingtests\\model\\modeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9DC5486F-FC06-4F5B-8CD9-0ABEB7988794}|MyDrawing\\MyDrawing.csproj|C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\mydrawing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC5486F-FC06-4F5B-8CD9-0ABEB7988794}|MyDrawing\\MyDrawing.csproj|solutionrelative:mydrawing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|c:\\users\\user\\desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7\\hw7\\mydrawingtests\\model\\modeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|solutionrelative:mydrawingtests\\model\\modeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\mydrawingtests\\shape\\shapestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\mydrawingtests\\shape\\shapestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66224413-068E-414D-9639-493389B7AEAD}|MyDrawingTests\\MyDrawingTests.csproj|solutionrelative:mydrawingtests\\shape\\shapestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,30 +26,29 @@
       "DocumentGroups": [
         {
           "DockedHeight": 370,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawing\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawing\\Form1.cs",
               "RelativeDocumentMoniker": "MyDrawing\\Form1.cs",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawing\\Form1.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawing\\Form1.cs",
               "RelativeToolTip": "MyDrawing\\Form1.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAADwvzwAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAADwvy4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T23:10:49.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T23:10:49.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MyDrawingGUITest.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
               "RelativeDocumentMoniker": "MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
               "RelativeToolTip": "MyDrawingTests\\GUItest\\MyDrawingGUITest.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAACAAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAHgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-08T14:22:47.803Z",
               "EditorCaption": ""
@@ -76,9 +75,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ShapesTests.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\Shape\\ShapesTests.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\Shape\\ShapesTests.cs",
               "RelativeDocumentMoniker": "MyDrawingTests\\Shape\\ShapesTests.cs",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\Shape\\ShapesTests.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\Shape\\ShapesTests.cs",
               "RelativeToolTip": "MyDrawingTests\\Shape\\ShapesTests.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAswBUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -88,9 +87,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ModelTests.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\Model\\ModelTests.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\Model\\ModelTests.cs",
               "RelativeDocumentMoniker": "MyDrawingTests\\Model\\ModelTests.cs",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\hw7 - \u8907\u88FD\\MyDrawingTests\\Model\\ModelTests.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\\u8996\u7A97\u7A0B\u5F0F\\HW7\\hw7\\MyDrawingTests\\Model\\ModelTests.cs",
               "RelativeToolTip": "MyDrawingTests\\Model\\ModelTests.cs",
               "ViewState": "AgIAAI8AAAAAAAAAAAAswIAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
